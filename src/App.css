@@ -1,0 +1,926 @@
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'BigCaslon-Medium';
+  src: url('fonts/BigCaslon.ttf');
+}
+
+.font-bigCaslonMedium {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-bigCaslonMedium {
+    font-family: 'BigCaslon-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
+.App { /* Base font style */
+  font-family: 'BigCaslon-Medium', sans-serif;
+  font-size: 36.6px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(7, 7, 7, 0.8500);
+  background-color: #f6f6f6;
+}
+
+.App .baseFont * { /* Base font style override for UI framework components */
+  font-family: 'BigCaslon-Medium', sans-serif;
+  font-size: 36.6px;
+}
+
+.App .appBg {
+  background-color: #f6f6f6;
+}
+
+.App .cardBg {
+  background-color: white;
+}
+
+.App .baseTextBg { /* Base text color as background */
+  background-color: rgba(7, 7, 7, 0.8500);
+}
+
+.App .secondaryTextColor {
+  color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .secondaryTextBg {
+  background-color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .primaryTextColor {
+  color: #bee9ee;
+}
+
+.App .primaryBg {
+  background-color: #bee9ee;
+}
+
+.App .highlightTextColor {
+  color: #0093d5;
+}
+
+.App .highlightBg {
+  background-color: #0093d5;
+}
+
+/* Styles to customize the UI framework plugin (MUI, https://muicss.com) */
+.mui-btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn--primary {
+    background-color: #bee9ee;
+}
+.mui-btn--primary:active, .mui-btn--primary:focus, .mui-btn--primary:hover {
+    background-color: #c3ebf0;
+}
+.mui-btn--accent {
+    background-color: #0093d5;
+}
+.mui-btn--accent:active, .mui-btn--accent:focus, .mui-btn--accent:hover {
+    background-color: #069fda;
+}
+.mui-textfield {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-checkbox, .mui-radio {  /* Reset UI framework styling that affects layout */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-select {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn+.mui-btn {  /* Reset UI framework styling that affects layout */
+    margin-left: 0;
+}
+.mui-btn--fab {  /* Reset UI framework styling that breaks compositing */
+    z-index: auto;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@keyframes slideIn_right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes slideIn_bottom {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* App-wide text styles specified in React Studio */
+.App .actionFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 14.2px;
+  font-weight: 400;
+}
+.App .actionFont * {
+  font-size: 14.2px;
+}
+.App .headlineFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.4px;
+  font-weight: 400;
+}
+.App .headlineFont * {
+  font-size: 19.4px;
+}
+.App .navBar {
+  background-color: #bee9ee;
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+
+.App .navBar a {
+  color: black;
+}
+
+.App .navBar .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  margin-top: 14px;
+}
+
+.App .navBar .backBtn {
+  position: absolute;
+  padding: 4px;
+  margin-left: 14px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .mui-container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 568px) {
+  .mui-container {
+    max-width: 568px;
+  }
+}
+@media (min-width: 768px) {
+  .mui-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mui-container {
+    max-width: 1024px;
+  }
+}
+
+.AppScreen {
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.App .background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.App .layoutFlow {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  float: left;
+}
+.App .layoutFlow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .layoutFlow .flowRow {
+  position: relative;
+  width: 100%;
+}
+
+.App .screenFgContainer {
+  /* Items in the foreground group within a screen are placed with fixed positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.App .foreground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.App .compContent {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.App ul {
+  margin: 0;
+  padding: 0;
+}
+.App li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.App .hasNestedComps {
+  position: relative;
+}
+.App .hasNestedComps:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .hasNestedComps .background {
+  position: absolute;
+}
+.App .hasNestedComps .layoutFlow {
+  position: relative;
+}
+.App .hasNestedComps .foreground {
+  position: absolute;
+}
+.App .bottomAlignedContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchPadScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ScratchPadScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ScratchPadScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ScratchPadScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* This component has a fixed-size layout */
+  .Component2 {
+    min-height: 476px;
+    overflow: hidden;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component2 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component2 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component2 .elImage {
+    position: absolute;
+    left: 470px;
+    top: 0px;
+    width: 203px;
+    height: 476px;
+  }
+
+
+  .Component2 .elImageCopy {
+    position: absolute;
+    left: 8px;
+    top: 68px;
+    width: 452px;
+    height: 340px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component1 {
+    min-height: 476px;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component1 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component1 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component1 .elImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component1 .elImage2 {
+    position: relative;
+    margin-top: 57px;
+    width: 253px;
+    margin-left: 204px;
+  }
+  .Component1 .elImage2 > * { 
+  width: 253px;
+  height: 336px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .Component3 {
+    min-height: 476px;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component3 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component3 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component3 .elImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component3 .elCard {
+    position: relative;
+    margin-top: 27px;
+    width: 278px;
+    margin-left: 34px;
+  }
+  .Component3 .elCard > * { 
+  width: 278px;
+  height: 429px;
+  }
+  
+
+
+  .Component3 .elCardCopy2 {
+    position: relative;
+    margin-top: -432px;
+    width: 100%;
+  }
+  .Component3 .elCardCopy2 > * { 
+  margin-left: auto;
+  width: 278px;
+  margin-right: 34px;
+  height: 429px;
+  }
+  
+
+
+  .Component3 .elImage2 {
+    position: absolute;
+    left: 45px;
+    top: 48px;
+    width: 253px;
+    height: 336px;
+  }
+
+
+  .Component3 .elImageCopy {
+    position: absolute;
+    right: 45px;
+    top: 48px;
+    width: 253px;
+    height: 336px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component4 {
+    min-height: 476px;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component4 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component4 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component4 .elImageCopy3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component4 .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: -391px;
+    width: 142px;
+    margin-left: 423px;
+  }
+  .Component4 .elText > * { 
+  width: 142px;
+  height: 62px;
+  }
+  
+
+
+  .Component4 .elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 218px;
+    width: 187px;
+    margin-left: 54px;
+  }
+  .Component4 .elText2 > * { 
+  width: 187px;
+  height: 61px;
+  }
+  
+
+
+  .Component4 .elImageCopy {
+    position: absolute;
+    left: 26px;
+    top: 27px;
+    width: 336px;
+    height: 253px;
+  }
+
+
+  .Component4 .elImageCopy2 {
+    position: absolute;
+    left: 296px;
+    top: 200px;
+    width: 336px;
+    height: 253px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component5 {
+    min-height: 476px;
+    overflow: hidden;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component5 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component5 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component5 .elImage {
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component5 .elImageCopy5 {
+    position: absolute;
+    left: 0px;
+    top: 412px;
+    width: 202px;
+    height: 93px;
+  }
+
+
+  .Component5 .elImage2 {
+    position: absolute;
+    left: 45px;
+    top: -113px;
+    width: 551px;
+    height: 204px;
+  }
+
+
+  .Component5 .elImageCopy3 {
+    position: absolute;
+    left: 457px;
+    top: 114px;
+    width: 204px;
+    height: 272px;
+  }
+
+
+  .Component5 .elImageCopy4 {
+    position: absolute;
+    left: 220px;
+    top: 100px;
+    width: 224px;
+    height: 169px;
+  }
+
+
+  .Component5 .elImageCopy {
+    position: absolute;
+    left: 223px;
+    top: 284px;
+    width: 224px;
+    height: 169px;
+  }
+
+
+  .Component5 .elImageCopy2 {
+    position: absolute;
+    left: 11px;
+    top: 112px;
+    width: 204px;
+    height: 272px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component6 {
+    min-height: 476px;
+    overflow: hidden;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component6 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component6 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component6 .elImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component6 .elImageCopy {
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    width: 340px;
+    height: 452px;
+  }
+
+
+  .Component6 .elImageCopy2 {
+    position: absolute;
+    left: 348px;
+    top: 9px;
+    width: 340px;
+    height: 452px;
+  }
+
+
+  .Component6 .elImage2 {
+    position: absolute;
+    left: 243px;
+    top: 132px;
+    width: 207px;
+    height: 199px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component7 {
+    min-height: 478px;
+    overflow: hidden;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component7 > .background > .containerMinHeight {
+    min-height: 478px;
+  }
+
+
+  .Component7 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component7 .elImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component7 .elCard {
+    position: absolute;
+    left: 30px;
+    top: 24px;
+    width: 278px;
+    height: 429px;
+  }
+
+
+  .Component7 .elImage2 {
+    position: absolute;
+    left: 42px;
+    top: 48px;
+    width: 253px;
+    height: 336px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component8 {
+    min-height: 476px;
+    overflow: hidden;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component8 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component8 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component8 .elImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component8 .elImageCopy {
+    position: absolute;
+    left: 36px;
+    top: 38px;
+    width: 528px;
+    height: 362px;
+  }
+
+
+  .Component8 .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 199px;
+    top: 417px;
+    width: 484px;
+    height: 56px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component9 {
+    min-height: 476px;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component9 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component9 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component9 .elImage {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    width: 672px;
+    height: 480px;
+  }
+
+
+  .Component9 .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 359px;
+    width: 245px;
+    margin-left: 408px;
+  }
+  .Component9 .elText > * { 
+  width: 245px;
+  height: 57px;
+  }
+  
+
+
+  .Component9 .elImageCopy2 {
+    position: absolute;
+    left: 10px;
+    top: 68px;
+    width: 204px;
+    height: 272px;
+  }
+
+
+  .Component9 .elImageCopy {
+    position: absolute;
+    left: 229px;
+    top: 68px;
+    width: 204px;
+    height: 272px;
+  }
+
+
+  .Component9 .elImageCopy3 {
+    position: absolute;
+    left: 449px;
+    top: 68px;
+    width: 204px;
+    height: 272px;
+  }
+
+/* This component has a fixed-size layout */
+  .Component10 {
+    min-height: 476px;
+    min-width: 673px;
+     /* This component has a fixed size */
+  }
+  .Component10 > .background > .containerMinHeight {
+    min-height: 476px;
+  }
+
+
+  .Component10 .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Component10 .elImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 672px;
+    height: 476px;
+  }
+
+
+  .Component10 .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 434px;
+    width: 381px;
+    margin-left: 4px;
+  }
+  .Component10 .elText > * { 
+  width: 381px;
+  height: 43px;
+  }
+  
+
+
+  .Component10 .elImage2 {
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    width: 317px;
+    height: 422px;
+  }
+
+
+  .Component10 .elImageCopy {
+    position: absolute;
+    left: 340px;
+    top: 8px;
+    width: 302px;
+    height: 226px;
+  }
+
+
+  .Component10 .elImageCopy2 {
+    position: absolute;
+    left: 340px;
+    top: 242px;
+    width: 302px;
+    height: 226px;
+  }
+
